@@ -34,6 +34,10 @@ const projectsData = [
 },
 
 ]
+const variants = {
+    hidden:{opacity:0, y:50},
+    visible:{opacity:1, y:0}
+  }
 
 const ScrollReveal = ({children}) => {
   return (
@@ -75,9 +79,14 @@ const ProjectCard = ({project}) => {
 
 const Projects = () => {
   return (
-    <div id="projects" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24">
+    <div id="projects" className="pt-24 pb-20 flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24">
       <ScrollReveal>
-      <h1 className="text-4xl font-light text-white md:text-6xl">My Projects</h1>
+      <motion.h1 
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      transition={{duration:0.5}} 
+      className="text-4xl font-light text-white md:text-6xl">My Projects</motion.h1>
       </ScrollReveal>
 
       <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
