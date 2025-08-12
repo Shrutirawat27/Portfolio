@@ -1,14 +1,33 @@
-import image2 from "/src/Pythoninterface.png";
-import image1 from "/src/E-commerceinterface.png";
-import image3 from "/src/Weatherinterface.png";
+import image1 from "/src/UrbanShiftersinterface.png";
+import image2 from "/src/Restaurantinterface.png";
+import image3 from "/src/E-commerceinterface.png";
 import image4 from "/src/Donationinterface.png";
-import image5 from "/src/Restaurantinterface.png";
-import image6 from "/src/RockPaperScissorsGame.png";
+import image5 from "/src/RockPaperScissorsGame.png";
+import image6 from "/src/Weatherinterface.png";
+import image7 from "/src/Pythoninterface.png";
 import { motion } from "framer-motion";
 
 const projectsData = [
   {
     image: image1,
+    title: "UrbanShifters",
+    description: "An innovative urban mobility platform that connects users with sustainable transportation options, enabling efficient commute planning and real-time updates. The platform offers an intuitive interface, location-based services, and a smooth booking experience to promote eco-friendly travel choices.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
+    demo: "https://urban-shifters-frontend.vercel.app/"
+  },
+
+  {
+    image: image2,
+    title: "Restaurant Website",
+    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services. Designed to enhance user engagement, it features an interactive menu display, image gallery, and contact section for a complete dining experience.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    github: "https://github.com/Shrutirawat27/Restaurant-Frontend",
+    demo: "https://restaurant-frontend-gray-mu.vercel.app/"
+  },
+
+  {
+    image: image3,
     title: "E-commerce Website",
     description: "A modern and stylish e-commerce platform designed specifically for women, offering a curated range of fashion, beauty, and lifestyle products. It provides a seamless shopping experience with user-friendly navigation, filtering, and secure checkout features.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
@@ -16,25 +35,7 @@ const projectsData = [
     demo: "https://ecommerce-frontend-xi-dun.vercel.app/"
   },
 
-  {
-    image: image2,
-    title: "Countdown Timer & Stopwatch",
-    description: "A GUI-based desktop application that allows users to set a countdown timer or run a stopwatch. Displays time updates in real-time and shows a Time's up popup when the countdown ends.",
-    technologies: ["Python(Tkinter)"],
-    github: "https://github.com/Shrutirawat27/Stopwatch",
-    demo: ""
-  },
-
-  {
-    image: image3,
-    title: "Weather App",
-    description: "A responsive frontend web application that fetches and displays real-time weather updates for any location using a weather API. The app features a clean UI and displays temperature, humidity, and other conditions.",
-    technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
-    github: "https://github.com/Shrutirawat27/WeatherApp",
-    demo: "https://weather-app-nu-blue-21.vercel.app/"
-  },
-
-  {
+   {
     image: image4,
     title: "Donation Website",
     description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure and seamless payment processing. It allows users to contribute to causes through an intuitive frontend and manages transactions and data on the backend.",
@@ -45,21 +46,31 @@ const projectsData = [
 
   {
     image: image5,
-    title: "Restaurant Website",
-    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services. Designed to enhance user engagement, it features an interactive menu display, image gallery, and contact section for a complete dining experience.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Restaurant-Frontend",
-    demo: "https://restaurant-frontend-gray-mu.vercel.app/"
-  },
-
-  {
-    image: image6,
     title: "Rock Paper Scissors Game",
     description: "A fun and interactive web-based Rock-Paper-Scissors game built using core web technologies. The game allows users to play against the computer with real-time score updates, smooth animations, and responsive design for an engaging user experience.",
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Shrutirawat27/Rock_Paper_Scissors",
     demo: "https://rock-paper-scissors-beta-ruby.vercel.app/"
+  },
+
+  {
+    image: image6,
+    title: "Weather App",
+    description: "A responsive frontend web application that fetches and displays real-time weather updates for any location using a weather API. The app features a clean UI and displays temperature, humidity, and other conditions.",
+    technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
+    github: "https://github.com/Shrutirawat27/WeatherApp",
+    demo: "https://weather-app-nu-blue-21.vercel.app/"
+  },
+
+   {
+    image: image7,
+    title: "Countdown Timer & Stopwatch",
+    description: "A GUI-based desktop application that allows users to set a countdown timer or run a stopwatch. Displays time updates in real-time and shows a Time's up popup when the countdown ends.",
+    technologies: ["Python(Tkinter)"],
+    github: "https://github.com/Shrutirawat27/Stopwatch",
+    demo: ""
   }
+
 ]
 
 const variants = {
