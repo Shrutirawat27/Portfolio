@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 const projectsData = [
   {
     image: image1,
-    title: "UrbanShifters",
-    description: "An innovative urban mobility platform that connects users with sustainable transportation options, enabling efficient commute planning and real-time updates. The platform offers an intuitive interface, location-based services, and a smooth booking experience to promote eco-friendly travel choices.",
+    title: "Packers & Movers Website",
+    description: "UrbanShifters is a modern and responsive website built to provide a smooth experience for individuals and businesses looking for relocation services. It features a clean homepage, organized service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. With its professional layout and mobile-friendly design, UrbanShifters makes exploring services and booking moves simple and reliable.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
     demo: "https://urban-shifters-frontend.vercel.app/"
