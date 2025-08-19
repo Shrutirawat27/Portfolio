@@ -11,7 +11,7 @@ const projectsData = [
   {
     image: image1,
     title: "Packers & Movers Website",
-    description: "UrbanShifters is a modern and responsive website built to provide a smooth experience for individuals and businesses looking for relocation services. It features a clean homepage, organized service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. With its professional layout and mobile-friendly design, UrbanShifters makes exploring services and booking moves simple and reliable.",
+    description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. Its mobile-friendly design ensures a simple and reliable booking experience.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
     demo: "https://urban-shifters-frontend.vercel.app/"
