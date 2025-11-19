@@ -1,51 +1,61 @@
-import image1 from "/src/UrbanShiftersinterface.png";
-import image2 from "/src/Restaurantinterface.png";
-import image3 from "/src/E-commerceinterface.png";
-import image4 from "/src/Donationinterface.png";
-import image5 from "/src/RockPaperScissorsGame.png";
-import image6 from "/src/Weatherinterface.png";
-import image7 from "/src/Pythoninterface.png";
+import image2 from "/src/YuvaSaverainterface.png";
+import image3 from "/src/UrbanShiftersinterface.png";
+import image4 from "/src/Restaurantinterface.png";
+import image5 from "/src/E-commerceinterface.png";
+import image6 from "/src/Donationinterface.png";
+import image7 from "/src/RockPaperScissorsGame.png";
+import image8 from "/src/Weatherinterface.png";
+import image9 from "/src/Pythoninterface.png";
 import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    image: image1,
-    title: "Packers & Movers Website",
-    description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. Its mobile-friendly design ensures a simple and reliable booking experience.",
+    image: image2,
+    title: "Yuva Savera Website",
+    description: "Yuva Savera is a simple and user-friendly web platform focused on youth empowerment, featuring clean sections for awareness content and community engagement, designed for easy access across all devices.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
-    demo: "https://urban-shifters-frontend.vercel.app/"
-  },
-
-  {
-    image: image2,
-    title: "Restaurant Website",
-    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services. Designed to enhance user engagement, it features an interactive menu display, image gallery, and contact section for a complete dining experience.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Restaurant-Frontend",
-    demo: "https://restaurant-frontend-gray-mu.vercel.app/"
+    demo: "https://yuva-saveraaa.vercel.app/"
   },
 
   {
     image: image3,
-    title: "E-commerce Website",
-    description: "A modern and stylish e-commerce platform designed specifically for women, offering a curated range of fashion, beauty, and lifestyle products. It provides a seamless shopping experience with user-friendly navigation, filtering, and secure checkout features.",
+    title: "Packers & Movers Website",
+    description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. Its mobile-friendly design ensures a simple and reliable booking experience.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Ecommerce-Frontend",
-    demo: "https://ecommerce-frontend-xi-dun.vercel.app/"
+    github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
+    demo: "https://urban-shifters.vercel.app/"
   },
 
-   {
+  {
     image: image4,
-    title: "Donation Website",
-    description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure and seamless payment processing. It allows users to contribute to causes through an intuitive frontend and manages transactions and data on the backend.",
+    title: "Restaurant Website",
+    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services. Designed to enhance user engagement, it features an interactive menu display, image gallery, and contact section for a complete dining experience.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Donation-Frontend",
-    demo: "https://donation-frontend-eight.vercel.app/"
+    github: "https://github.com/Shrutirawat27/Restaurant-Frontend",
+    demo: "https://www.zaika.us.com/"
   },
 
   {
     image: image5,
+    title: "E-commerce Website",
+    description: "A modern and stylish e-commerce platform designed specifically for women, offering a curated range of fashion, beauty, and lifestyle products. It provides a seamless shopping experience with user-friendly navigation, filtering, and secure checkout features.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    github: "https://github.com/Shrutirawat27/Ecommerce-Frontend",
+    demo: "https://herstyle-ecommerce.vercel.app/"
+  },
+
+   {
+    image: image6,
+    title: "Donation Website",
+    description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure and seamless payment processing. It allows users to contribute to causes through an intuitive frontend and manages transactions and data on the backend.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    github: "https://github.com/Shrutirawat27/Donation-Frontend",
+    demo: "https://donatezone.vercel.app/"
+  },
+
+  {
+    image: image7,
     title: "Rock Paper Scissors Game",
     description: "A fun and interactive web-based Rock-Paper-Scissors game built using core web technologies. The game allows users to play against the computer with real-time score updates, smooth animations, and responsive design for an engaging user experience.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -54,7 +64,7 @@ const projectsData = [
   },
 
   {
-    image: image6,
+    image: image8,
     title: "Weather App",
     description: "A responsive frontend web application that fetches and displays real-time weather updates for any location using a weather API. The app features a clean UI and displays temperature, humidity, and other conditions.",
     technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
@@ -63,7 +73,7 @@ const projectsData = [
   },
 
    {
-    image: image7,
+    image: image9,
     title: "Countdown Timer & Stopwatch",
     description: "A GUI-based desktop application that allows users to set a countdown timer or run a stopwatch. Displays time updates in real-time and shows a Time's up popup when the countdown ends.",
     technologies: ["Python(Tkinter)"],
