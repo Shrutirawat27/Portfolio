@@ -1,4 +1,4 @@
-import image from "/src/image.jpg"
+import image from "/src/Shruti_LinkedIn_Profile.jpeg"
 import { motion } from "framer-motion";
 
 const Hero = () => {
