@@ -14,7 +14,6 @@ const projectsData = [
     title: "Yuva Savera Website",
     description: "Yuva Savera is a simple and user-friendly web platform focused on youth empowerment, featuring clean sections for awareness content and community engagement, designed for easy access across all devices.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
     demo: "https://yuva-saveraaa.vercel.app/"
   },
 
@@ -23,7 +22,6 @@ const projectsData = [
     title: "Packers & Movers Website",
     description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system. Its mobile-friendly design ensures a simple and reliable booking experience.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/UrbanShifters_Frontend",
     demo: "https://urban-shifters.vercel.app/"
   },
 
@@ -32,7 +30,6 @@ const projectsData = [
     title: "Restaurant Website",
     description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services. Designed to enhance user engagement, it features an interactive menu display, image gallery, and contact section for a complete dining experience.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Restaurant-Frontend",
     demo: "https://www.zaika.us.com/"
   },
 
@@ -41,7 +38,6 @@ const projectsData = [
     title: "E-commerce Website",
     description: "A modern and stylish e-commerce platform designed specifically for women, offering a curated range of fashion, beauty, and lifestyle products. It provides a seamless shopping experience with user-friendly navigation, filtering, and secure checkout features.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Ecommerce-Frontend",
     demo: "https://herstyle-ecommerce.vercel.app/"
   },
 
@@ -50,7 +46,6 @@ const projectsData = [
     title: "Donation Website",
     description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure and seamless payment processing. It allows users to contribute to causes through an intuitive frontend and manages transactions and data on the backend.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    github: "https://github.com/Shrutirawat27/Donation-Frontend",
     demo: "https://donatezone.vercel.app/"
   },
 
@@ -59,7 +54,6 @@ const projectsData = [
     title: "Rock Paper Scissors Game",
     description: "A fun and interactive web-based Rock-Paper-Scissors game built using core web technologies. The game allows users to play against the computer with real-time score updates, smooth animations, and responsive design for an engaging user experience.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Shrutirawat27/Rock_Paper_Scissors",
     demo: "https://rock-paper-scissors-beta-ruby.vercel.app/"
   },
 
@@ -68,7 +62,6 @@ const projectsData = [
     title: "Weather App",
     description: "A responsive frontend web application that fetches and displays real-time weather updates for any location using a weather API. The app features a clean UI and displays temperature, humidity, and other conditions.",
     technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
-    github: "https://github.com/Shrutirawat27/WeatherApp",
     demo: "https://weather-app-nu-blue-21.vercel.app/"
   },
 
@@ -77,10 +70,8 @@ const projectsData = [
     title: "Countdown Timer & Stopwatch",
     description: "A GUI-based desktop application that allows users to set a countdown timer or run a stopwatch. Displays time updates in real-time and shows a Time's up popup when the countdown ends.",
     technologies: ["Python(Tkinter)"],
-    github: "https://github.com/Shrutirawat27/Stopwatch",
     demo: ""
   }
-
 ]
 
 const variants = {
