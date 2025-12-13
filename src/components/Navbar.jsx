@@ -80,9 +80,9 @@ const Navbar = () => {
         <BiMenu className="block md:hidden text-4xl" onClick={menuOpen}/>
       )}
 
-{isOpen && ( 
-  <div className="fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-gray-800 bg-black/90 p-12 ${isOpen ? ">
-    <ul className="flex flex-col gap-8 w-full">
+{isOpen && (
+  <div className="fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-8 border border-gray-800 bg-black/90 px-8 py-8 overflow-y-auto">
+    <ul className="flex flex-col gap-6 w-full">
       <a href="#home" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Home</li>
       </a>
@@ -92,10 +92,10 @@ const Navbar = () => {
       <a href="#projects" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Projects</li>
       </a>
-      <a href="#achievements" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+      <a href="#achievements" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Achievements</li>
       </a>
-      <a href="#certifications" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+      <a href="#certifications" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Certifications</li>
       </a>
       <a href="#contact" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
@@ -108,7 +108,7 @@ const Navbar = () => {
       )}
     </ul>
 
-    <ul className="flex gap-5 mt-auto">
+    <ul className="flex gap-5 mt-6">
       <li>
         <a href="https://www.linkedin.com/in/shruti-rawat-6b7969314" target="_blank" rel="noopener noreferrer">
           <BsLinkedin size={24} />
@@ -127,6 +127,7 @@ const Navbar = () => {
     </ul>
   </div>
 )}
+
 
     </nav>
   )
