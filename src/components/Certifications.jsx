@@ -144,7 +144,7 @@ const ScrollReveal = ({ children }) => {
 
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
-  const itemsToShow = showAll ? certificationsData.length : 6;
+  const itemsToShow = showAll ? certificationsData.length : 3;
 
   return (
     <div
@@ -191,7 +191,7 @@ const Certifications = () => {
         ))}
       </div>
 
-      {certificationsData.length > 6 && (
+      {certificationsData.length > 3 && (
         <button
           onClick={() => setShowAll(!showAll)}
           className="rounded-md bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 text-white font-medium hover:scale-105 transition">

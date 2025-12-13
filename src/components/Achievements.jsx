@@ -38,15 +38,15 @@ const ScrollReveal = ({ children }) => (
 const Achievements = () => {
   const [index, setIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
-  const [mobileCount, setMobileCount] = useState(2); // How many to show initially on mobile
+  const [mobileCount, setMobileCount] = useState(2); // initial mobile cards
   const cardRef = useRef(null);
 
-  // Responsive card counts
+  // Detect mobile/tablet
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setCardsToShow(1); // desktop carousel not used
+        setCardsToShow(1);
         setIsMobile(true);
       } else if (window.innerWidth < 1024) {
         setCardsToShow(2);
@@ -77,6 +77,14 @@ const Achievements = () => {
   const cardWidth = cardRef.current?.offsetWidth || 0;
   const translateX = index * (cardWidth + gap);
 
+  const toggleMobileView = () => {
+    if (mobileCount >= achievementsData.length) {
+      setMobileCount(2); // show less
+    } else {
+      setMobileCount(achievementsData.length); // show all
+    }
+  };
+
   return (
     <div
       id="achievements"
@@ -95,7 +103,6 @@ const Achievements = () => {
       </ScrollReveal>
 
       {isMobile ? (
-        // MOBILE: simple stacked cards with Load More
         <div className="flex flex-col gap-6 w-full max-w-[500px]">
           {achievementsData.slice(0, mobileCount).map((item, i) => (
             <div
@@ -115,17 +122,14 @@ const Achievements = () => {
             </div>
           ))}
 
-          {mobileCount < achievementsData.length && (
-            <button
-              onClick={() => setMobileCount((prev) => prev + 2)}
-              className="mt-4 bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition"
-            >
-              Load More
-            </button>
-          )}
+          <button
+            onClick={toggleMobileView}
+            className="mt-4 rounded-lg bg-gradient-to-r from-blue-500 to-pink-500 px-3 py-2 text-white transition-all hover:scale-105"
+          >
+            {mobileCount >= achievementsData.length ? "Show Less" : "Load More"}
+          </button>
         </div>
       ) : (
-        // DESKTOP/TABLET: carousel
         <ScrollReveal>
           <div className="relative w-full max-w-[1100px] overflow-hidden">
             <button
