@@ -40,12 +40,12 @@ const Achievements = () => {
   const [cardsToShow, setCardsToShow] = useState(3);
   const cardRef = useRef(null);
 
-  // Responsive number of visible cards
+  // Only adjust mobile/tablet card count
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setCardsToShow(1);
-      else if (window.innerWidth < 1024) setCardsToShow(2);
-      else setCardsToShow(3);
+      if (window.innerWidth < 768) setCardsToShow(1); // mobile
+      else if (window.innerWidth < 1024) setCardsToShow(2); // tablet
+      else setCardsToShow(3); // desktop, unchanged
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -63,8 +63,8 @@ const Achievements = () => {
     return () => clearInterval(timer);
   }, [maxIndex]);
 
+  const gap = 24; // spacing between cards
   const cardWidth = cardRef.current?.offsetWidth || 0;
-  const gap = 24;
   const translateX = index * (cardWidth + gap);
 
   return (
