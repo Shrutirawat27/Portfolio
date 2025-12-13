@@ -38,14 +38,23 @@ const ScrollReveal = ({ children }) => (
 const Achievements = () => {
   const [index, setIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
+  const [mobileCount, setMobileCount] = useState(2); // How many to show initially on mobile
   const cardRef = useRef(null);
 
-  // Only adjust mobile/tablet card count
+  // Responsive card counts
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setCardsToShow(1); // mobile
-      else if (window.innerWidth < 1024) setCardsToShow(2); // tablet
-      else setCardsToShow(3); // desktop, unchanged
+      if (window.innerWidth < 768) {
+        setCardsToShow(1); // desktop carousel not used
+        setIsMobile(true);
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2);
+        setIsMobile(false);
+      } else {
+        setCardsToShow(3);
+        setIsMobile(false);
+      }
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -53,17 +62,18 @@ const Achievements = () => {
   }, []);
 
   const maxIndex = achievementsData.length - cardsToShow;
-
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
-  // Auto-slide
+  // Auto-slide for desktop
   useEffect(() => {
-    const timer = setInterval(next, 3500);
-    return () => clearInterval(timer);
-  }, [maxIndex]);
+    if (!isMobile) {
+      const timer = setInterval(next, 3500);
+      return () => clearInterval(timer);
+    }
+  }, [maxIndex, isMobile]);
 
-  const gap = 24; // spacing between cards
+  const gap = 24;
   const cardWidth = cardRef.current?.offsetWidth || 0;
   const translateX = index * (cardWidth + gap);
 
@@ -84,56 +94,83 @@ const Achievements = () => {
         </motion.h1>
       </ScrollReveal>
 
-      <ScrollReveal>
-        <div className="relative w-full max-w-[1100px] overflow-hidden">
-          {/* Arrows */}
-          <button
-            onClick={prev}
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-          >
-            <BiChevronLeft size={28} />
-          </button>
+      {isMobile ? (
+        // MOBILE: simple stacked cards with Load More
+        <div className="flex flex-col gap-6 w-full max-w-[500px]">
+          {achievementsData.slice(0, mobileCount).map((item, i) => (
+            <div
+              key={i}
+              className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md text-white"
+            >
+              <a href={item.image} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black"
+                />
+              </a>
+              <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
+              <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+              <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
+            </div>
+          ))}
 
-          <button
-            onClick={next}
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-          >
-            <BiChevronRight size={28} />
-          </button>
-
-          {/* Slider */}
-          <motion.div
-            animate={{ x: -translateX }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="flex gap-6"
-          >
-            {achievementsData.map((item, i) => (
-              <div
-                key={i}
-                ref={i === 0 ? cardRef : null}
-                className={`flex-shrink-0 w-full sm:w-[48%] lg:w-[31%] text-white`}
-              >
-                <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
-                  <a href={item.image} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"
-                    />
-                  </a>
-
-                  <span className="text-xs uppercase tracking-wide text-pink-400">
-                    {item.category}
-                  </span>
-
-                  <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+          {mobileCount < achievementsData.length && (
+            <button
+              onClick={() => setMobileCount((prev) => prev + 2)}
+              className="mt-4 bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition"
+            >
+              Load More
+            </button>
+          )}
         </div>
-      </ScrollReveal>
+      ) : (
+        // DESKTOP/TABLET: carousel
+        <ScrollReveal>
+          <div className="relative w-full max-w-[1100px] overflow-hidden">
+            <button
+              onClick={prev}
+              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
+            >
+              <BiChevronLeft size={28} />
+            </button>
+
+            <button
+              onClick={next}
+              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
+            >
+              <BiChevronRight size={28} />
+            </button>
+
+            <motion.div
+              animate={{ x: -translateX }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="flex gap-6"
+            >
+              {achievementsData.map((item, i) => (
+                <div
+                  key={i}
+                  ref={i === 0 ? cardRef : null}
+                  className={`flex-shrink-0 w-full sm:w-[48%] lg:w-[31%] text-white`}
+                >
+                  <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
+                    <a href={item.image} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"
+                      />
+                    </a>
+                    <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
+                    <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                    <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </ScrollReveal>
+      )}
     </div>
   );
 };
