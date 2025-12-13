@@ -92,6 +92,12 @@ const Navbar = () => {
       <a href="#projects" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Projects</li>
       </a>
+      <a href="#achievements" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+        <li>Achievements</li>
+      </a>
+      <a href="#certifications" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+        <li>Certifications</li>
+      </a>
       <a href="#contact" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
         <li>Contact</li>
       </a>

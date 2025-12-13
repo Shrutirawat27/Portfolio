@@ -121,13 +121,14 @@ const Achievements = () => {
               <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
             </div>
           ))}
-
+          <div className="flex justify-center">
           <button
             onClick={toggleMobileView}
-            className="mt-4 rounded-lg bg-gradient-to-r from-blue-500 to-pink-500 px-3 py-2 text-white transition-all hover:scale-105"
+            className="rounded-md bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 text-white font-medium hover:scale-105 transition"
           >
             {mobileCount >= achievementsData.length ? "Show Less" : "Load More"}
           </button>
+        </div>
         </div>
       ) : (
         <ScrollReveal>
