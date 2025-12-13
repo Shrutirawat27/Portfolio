@@ -1,17 +1,22 @@
-import { useState } from "react";
-import { BsLinkedin } from "react-icons/bs";
-import { BsGithub } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { BiX } from "react-icons/bi";
-import { BiMenu } from "react-icons/bi";
+import { useState, useEffect } from "react";
+import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
+import { BiX, BiMenu } from "react-icons/bi";
 
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
+  const [showResume, setShowResume] = useState(false);
 
-  const menuOpen = () => {
-    setIsOpen(!isOpen);
-  }
+  const menuOpen = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeHeight = document.getElementById("home")?.offsetHeight || 0;
+      setShowResume(window.scrollY > homeHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-b-gray-700 bg-black/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
@@ -22,17 +27,31 @@ const Navbar = () => {
           <li>Home</li>
         </a>
 
-        <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Tech</li>
+        <a href="#skills" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+          <li>Skills</li>
         </a>
 
         <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Projects</li>
         </a>
 
+        <a href="#achievements" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+          <li>Achievements</li>
+        </a>
+
+        <a href="#certifications" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+          <li>Certifications</li>
+        </a>
+
         <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Contact</li>
-        </a>        
+        </a>  
+
+        {showResume && (
+          <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+            <li>Resume</li>
+          </a>
+        )}      
       </ul>
 
       <ul className="hidden md:flex gap-5">
@@ -53,7 +72,6 @@ const Navbar = () => {
           <BsInstagram/>
           </a>
         </li>
-
       </ul>
 
       {isOpen ? (
@@ -69,8 +87,8 @@ const Navbar = () => {
               <li>Home</li>
             </a>
 
-            <a href="#tech" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-              <li>Tech</li>
+            <a href="#skills" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+              <li>Skills</li>
             </a>
 
             <a href="#projects" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
@@ -80,31 +98,33 @@ const Navbar = () => {
             <a href="#contact" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Contact</li>
             </a>
+
+            <a href="#home" onClick={() => setIsOpen(false)} className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+              <li>Resume</li>
+            </a>
           </ul>
 
           <ul className="flex flex-wrap gap-5">
-  <li className="...">
-    <a href="https://www.linkedin.com/in/shruti-rawat-6b7969314" target="_blank" rel="noopener noreferrer">
-      <BsLinkedin />
-    </a>
-  </li>
-  <li className="...">
-    <a href="https://github.com/Shrutirawat27" target="_blank" rel="noopener noreferrer">
-      <BsGithub />
-    </a>
-  </li>
-  <li className="...">
-    <a href="https://www.instagram.com/shrutirawat0208" target="_blank" rel="noopener noreferrer">
-      <BsInstagram />
-    </a>
-  </li>
-</ul>
-
+            <li className="...">
+              <a href="https://www.linkedin.com/in/shruti-rawat-6b7969314" target="_blank" rel="noopener noreferrer">
+              <BsLinkedin />
+              </a>
+            </li>
+            <li className="...">
+              <a href="https://github.com/Shrutirawat27" target="_blank" rel="noopener noreferrer">
+              <BsGithub />
+              </a>
+            </li>
+            <li className="...">
+              <a href="https://www.instagram.com/shrutirawat0208" target="_blank" rel="noopener noreferrer">
+              <BsInstagram />
+              </a>
+            </li>
+          </ul>
         </div>
       )}
-
     </nav>
   )
 }
 
-export default Navbar
+export default Navbar;

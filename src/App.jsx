@@ -1,7 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Tech from "./components/Tech";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Achievements from "./components/Achievements";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 
 function App() {
@@ -11,12 +13,13 @@ function App() {
     <main className="flex flex-col items-center px-4 md:px-8 lg:px-16">
       <Navbar/>
       <Hero/>
-      <Tech/>
+      <Skills/>
       <Projects/>
+      <Achievements />
+      <Certifications />
       <Contact/>
     </main>       
     </>;
-  
 }
 
 export default App;
