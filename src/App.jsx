@@ -20,6 +20,7 @@ function App() {
       <Contact/>
     </main>       
     </>;
+  
 }
 
 export default App;
