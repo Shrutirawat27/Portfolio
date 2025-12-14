@@ -19,8 +19,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-b-gray-700 bg-black/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
-      <a href="#home" className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100">Shruti</a>
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-b-gray-700 bg-black/70 px-6 md:px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
+      <a href="#home" className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100 ">Shruti</a>
 
       <ul className="hidden md:flex gap-10">
         <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
@@ -75,9 +75,9 @@ const Navbar = () => {
       </ul>
 
       {isOpen ? (
-        <BiX className="block md:hidden text-4xl" onClick={menuOpen}/>
+        <BiX className="block md:hidden text-4xl absolute right-6" onClick={menuOpen}/>
       ) : (
-        <BiMenu className="block md:hidden text-4xl" onClick={menuOpen}/>
+        <BiMenu className="block md:hidden text-4xl absolute right-6" onClick={menuOpen}/>
       )}
 
 {isOpen && (
@@ -127,9 +127,7 @@ const Navbar = () => {
     </ul>
   </div>
 )}
-
-
-    </nav>
+</nav>
   )
 }
 

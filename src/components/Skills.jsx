@@ -57,7 +57,7 @@ const Skills = () => {
         Skills
       </motion.h1>
 
-      <div className="grid w-full max-w-[1100px] grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid w-full max-w-[1000px] grid-cols-1 gap-8 md:grid-cols-2">
         {/* Technical Skills */}
         <ScrollReveal>
           <div className="rounded-2xl border border-indigo-600 focus:outline-none bg-black/50 p-4 backdrop-blur-md h-full">
@@ -93,7 +93,7 @@ const Skills = () => {
               Soft Skills
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {softSkills.map((skill, index) => (
                 <motion.span
                   key={index}
