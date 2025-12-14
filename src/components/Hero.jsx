@@ -8,7 +8,7 @@ const Hero = () => {
       className="px-16 flex min-h-screen w-full items-center justify-center py-28 md:px-32"
     >
       <div className="flex flex-col items-center justify-center gap-5 text-white">
-        
+
         {/* Profile Image */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
@@ -18,7 +18,7 @@ const Hero = () => {
           <img
             src={image}
             alt="Shruti Rawat"
-            className="w-[200px] h-[200px] md:w-[200px] md:h-[200px] object-cover rounded-full cursor-pointer shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-600"
+            className="w-[200px] h-[200px] object-cover rounded-full cursor-pointer shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-600"
           />
         </motion.div>
 
