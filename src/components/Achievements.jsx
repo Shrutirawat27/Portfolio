@@ -29,8 +29,7 @@ const ScrollReveal = ({ children }) => (
     initial={{ opacity: 0, y: 100 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-  >
+    transition={{ duration: 0.8 }}>
     {children}
   </motion.div>
 );
@@ -41,7 +40,6 @@ const Achievements = () => {
   const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef(null);
 
-  // Detect mobile/tablet
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -64,7 +62,6 @@ const Achievements = () => {
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
-  // Auto-slide for mobile
   useEffect(() => {
     if (isMobile) {
       const timer = setInterval(() => {
@@ -74,16 +71,14 @@ const Achievements = () => {
     }
   }, [isMobile]);
 
-  // Auto-slide for desktop (FIX)
-useEffect(() => {
-  if (!isMobile) {
-    const timer = setInterval(() => {
-      setIndex((i) => (i >= maxIndex ? 0 : i + 1));
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }
-}, [isMobile, maxIndex]);
+  useEffect(() => {
+    if (!isMobile) {
+      const timer = setInterval(() => {
+        setIndex((i) => (i >= maxIndex ? 0 : i + 1));
+      }, 3500);
+      return () => clearInterval(timer);
+    }
+  }, [isMobile, maxIndex]);
 
   const gap = 24;
   const cardWidth = cardRef.current?.offsetWidth || 0;
@@ -92,16 +87,14 @@ useEffect(() => {
   return (
     <div
       id="achievements"
-      className="pt-24 pb-20 w-full flex flex-col items-center gap-14 px-4 md:px-14"
-    >
+      className="pt-24 pb-20 w-full flex flex-col items-center gap-14 px-4 md:px-14">
       <ScrollReveal>
         <motion.h1
           variants={variants}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.5 }}
-          className="text-3xl font-light text-white md:text-5xl text-center"
-        >
+          className="text-3xl font-light text-white md:text-5xl text-center">
           Achievements
         </motion.h1>
       </ScrollReveal>
@@ -111,21 +104,18 @@ useEffect(() => {
           <motion.div
             animate={{ x: -translateX }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex gap-6"
-          >
+            className="flex gap-6">
             {achievementsData.map((item, i) => (
               <div
                 key={i}
                 ref={i === 0 ? cardRef : null}
-                className="flex-shrink-0 w-full text-white"
-              >
+                className="flex-shrink-0 w-full text-white">
                 <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
                   <a href={item.image} target="_blank" rel="noopener noreferrer">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black"
-                    />
+                      className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black"/>
                   </a>
                   <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
                   <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
@@ -140,36 +130,31 @@ useEffect(() => {
           <div className="relative w-full max-w-[1100px] overflow-hidden">
             <button
               onClick={prev}
-              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-            >
+              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white">
               <BiChevronLeft size={28} />
             </button>
 
             <button
               onClick={next}
-              className="absolute right-8 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-            >
+              className="absolute right-8 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white">
               <BiChevronRight size={28} />
             </button>
 
             <motion.div
               animate={{ x: -translateX }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="flex gap-6"
-            >
+              className="flex gap-6">
               {achievementsData.map((item, i) => (
                 <div
                   key={i}
                   ref={i === 0 ? cardRef : null}
-                  className={`flex-shrink-0 w-full sm:w-[48%] lg:w-[31%] text-white`}
-                >
+                  className={`flex-shrink-0 w-full sm:w-[48%] lg:w-[31%] text-white`}>
                   <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
                     <a href={item.image} target="_blank" rel="noopener noreferrer">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"
-                      />
+                        className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"/>
                     </a>
                     <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
                     <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>

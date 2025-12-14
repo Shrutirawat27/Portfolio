@@ -149,8 +149,7 @@ const Certifications = () => {
   return (
     <div
       id="certifications"
-      className="pt-24 pb-20 w-full min-h-screen flex flex-col items-center gap-14 px-2 sm:px-4 md:px-14
-">
+      className="pt-24 pb-20 w-full min-h-screen flex flex-col items-center gap-14 px-2 sm:px-4 md:px-14">
       <ScrollReveal>
         <motion.h1
           variants={variants}
