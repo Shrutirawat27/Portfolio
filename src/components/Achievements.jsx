@@ -147,7 +147,7 @@ useEffect(() => {
 
             <button
               onClick={next}
-              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
+              className="absolute right-8 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
             >
               <BiChevronRight size={28} />
             </button>
