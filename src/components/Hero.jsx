@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{duration: 0.8, delay: 0.2}}
         
           className="flex max-w-[600px] flex-col items-center justify-center gap-2 text-center">
-          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light md:text-6xl">Shruti Rawat</h1>
+          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-4xl font-light md:text-6xl">Shruti Rawat</h1>
           <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-2xl md:text-3xl">Software Enthusiast</h3>
           <p className="md:text-base text-pretty text-sm text-gray-400">I'm a passionate software enthusiast who loves turning ideas into real digital experiences. With a curious mind and a constant desire to learn, I enjoy building creative and meaningful projects that make a difference.</p>
 
