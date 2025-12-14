@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
 import cyberstorm from "/src/assets/achievements/Cyberstorm Finalist Certificate.jpg";
 import vishwa from "/src/assets/achievements/VishwaCTF.jpg";
 import chakravyuha from "/src/assets/achievements/Chakravyuha Certificate.jpg";
@@ -19,11 +20,6 @@ const achievementsData = [
   { title: "Creative Head", subtitle: "Event & Design Lead", category: "Leadership", image: creativeHead },
 ];
 
-const variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const ScrollReveal = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, y: 100 }}
@@ -38,11 +34,10 @@ const ScrollReveal = ({ children }) => (
 const Achievements = () => {
   const [index, setIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
-  const [mobileCount, setMobileCount] = useState(2); // initial mobile cards
+  const [isMobile, setIsMobile] = useState(false);
+
   const cardRef = useRef(null);
 
-  // Detect mobile/tablet
-  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -62,28 +57,25 @@ const Achievements = () => {
   }, []);
 
   const maxIndex = achievementsData.length - cardsToShow;
+
   const next = () => setIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
-  // Auto-slide for desktop
+  // Auto-slide ONLY on desktop
   useEffect(() => {
     if (!isMobile) {
       const timer = setInterval(next, 3500);
       return () => clearInterval(timer);
     }
-  }, [maxIndex, isMobile]);
+  }, [isMobile, maxIndex]);
 
   const gap = 24;
-  const cardWidth = cardRef.current?.offsetWidth || 0;
-  const translateX = index * (cardWidth + gap);
+  const mobileCardWidth = 280;
+  const cardWidth = isMobile
+    ? mobileCardWidth
+    : cardRef.current?.offsetWidth || 0;
 
-  const toggleMobileView = () => {
-    if (mobileCount >= achievementsData.length) {
-      setMobileCount(2); // show less
-    } else {
-      setMobileCount(achievementsData.length); // show all
-    }
-  };
+  const translateX = index * (cardWidth + gap);
 
   return (
     <div
@@ -91,91 +83,64 @@ const Achievements = () => {
       className="pt-24 pb-20 w-full flex flex-col items-center gap-14 px-4 md:px-14"
     >
       <ScrollReveal>
-        <motion.h1
-          variants={variants}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-light text-white md:text-5xl"
-        >
+        <h1 className="text-3xl font-light text-white md:text-5xl">
           Achievements
-        </motion.h1>
+        </h1>
       </ScrollReveal>
 
-      {isMobile ? (
-        <div className="flex flex-col gap-6 w-full max-w-[500px]">
-          {achievementsData.slice(0, mobileCount).map((item, i) => (
-            <div
-              key={i}
-              className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md text-white"
-            >
-              <a href={item.image} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black"
-                />
-              </a>
-              <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
-              <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
-              <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
-            </div>
-          ))}
-          <div className="flex justify-center">
+      <ScrollReveal>
+        <div className="relative w-full max-w-[1100px] overflow-hidden">
+
+          {/* arrows */}
           <button
-            onClick={toggleMobileView}
-            className="rounded-md bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 text-white font-medium hover:scale-105 transition"
+            onClick={prev}
+            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
           >
-            {mobileCount >= achievementsData.length ? "Show Less" : "Load More"}
+            <BiChevronLeft size={28} />
           </button>
-        </div>
-        </div>
-      ) : (
-        <ScrollReveal>
-          <div className="relative w-full max-w-[1100px] overflow-hidden">
-            <button
-              onClick={prev}
-              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-            >
-              <BiChevronLeft size={28} />
-            </button>
 
-            <button
-              onClick={next}
-              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
-            >
-              <BiChevronRight size={28} />
-            </button>
+          <button
+            onClick={next}
+            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-black/70 p-2 rounded-full text-white"
+          >
+            <BiChevronRight size={28} />
+          </button>
 
-            <motion.div
-              animate={{ x: -translateX }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="flex gap-6"
-            >
-              {achievementsData.map((item, i) => (
-                <div
-                  key={i}
-                  ref={i === 0 ? cardRef : null}
-                  className={`flex-shrink-0 w-full sm:w-[48%] lg:w-[31%] text-white`}
-                >
-                  <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
-                    <a href={item.image} target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"
-                      />
-                    </a>
-                    <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
-                    <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
-                  </div>
+          {/* track */}
+          <motion.div
+            animate={{ x: -translateX }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="flex gap-6"
+          >
+            {achievementsData.map((item, i) => (
+              <div
+                key={i}
+                ref={i === 0 ? cardRef : null}
+                className={`flex-shrink-0 text-white
+                  ${isMobile ? "" : "w-full sm:w-[48%] lg:w-[31%]"}`}
+                style={isMobile ? { width: `${mobileCardWidth}px` } : {}}
+              >
+                <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
+                  <a href={item.image} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black transition-transform duration-300 md:hover:scale-105"
+                    />
+                  </a>
+
+                  <span className="text-xs uppercase tracking-wide text-pink-400">
+                    {item.category}
+                  </span>
+
+                  <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-1 text-sm text-gray-400">{item.subtitle}</p>
                 </div>
-              ))}
-            </motion.div>
-          </div>
-        </ScrollReveal>
-      )}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </ScrollReveal>
     </div>
   );
 };
