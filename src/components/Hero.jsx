@@ -10,7 +10,7 @@ const Hero = () => {
           initial={{y: -50, opacity: 0}}
           animate={{y: 0, opacity: 1}}
           transition={{duration: 0.8, delay: 0.2}}>
-          <img src={image} alt="" className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-cover rounded-full cursor-pointer shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-600"/>
+          <img src={image} alt="" className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] object-cover rounded-full cursor-pointer shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-600"/>
         </motion.div>
 
         <motion.div 
@@ -26,7 +26,7 @@ const Hero = () => {
           <a
             href="/Shruti.Rawat_Resume.pdf"
             download
-            className="mt-2 px-3 py-2 rounded-md bg-gradient-to-r from-blue-500 to-pink-500 text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+            className="mt-3 px-3 py-2 rounded-md bg-gradient-to-r from-blue-500 to-pink-500 text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
             Download Resume
           </a>
         </motion.div>
