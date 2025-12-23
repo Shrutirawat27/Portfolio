@@ -1,8 +1,7 @@
-# Internship Task 1 – Personal Portfolio Website
+# Personal Portfolio Website
 
 ## Project Overview
-This project is part of my **Full Stack Web Development Internship (Task 1)**.
-The goal of this task was to build a **personal professional portfolio website**
+The goal of this project was to build a **personal professional portfolio website**
 to showcase my skills, projects, and achievements.
 
 ## Tech Stack
@@ -28,7 +27,3 @@ https://shruti-rawat.vercel.app/
 - Hands-on experience with frontend UI/UX
 - Integration of third-party APIs
 - Deploying a frontend application
-
-## Internship Task
-**Task Number:** 01  
-**Task Name:** Build a Personal Professional Portfolio Website
