@@ -18,7 +18,7 @@ to showcase my skills, projects, and achievements.
 - Deployed and live
 
 ## 🌐 Live Demo
-[[Add your deployed link here](https://shruti-rawat.vercel.app/)]
+[https://shruti-rawat.vercel.app/]
 
 ## Screenshot
 ![Web Page Screenshot](src/assets/Portfolio.png)
