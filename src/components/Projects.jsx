@@ -1,6 +1,6 @@
 import { useState } from "react";
 import image9 from "/src/assets/YuvaSaverainterface.png";
-import image8 from "/src/assets/TripKartinterface.png";
+import image8 from "/src/assets/Tripkartinterface.png";
 import image7 from "/src/assets/Restaurantinterface.png";
 import image6 from "/src/assets/E-commerceinterface.png";
 import image5 from "/src/assets/UrbanShiftersinterface.png";
