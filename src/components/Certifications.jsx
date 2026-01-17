@@ -11,16 +11,17 @@ import mobileWebDevImg from "/src/assets/certifications/WebDev.jpg";
 import rajniTechImg from "/src/assets/certifications/Web_Developer_Intern.jpg";
 import siesInternImg from "/src/assets/certifications/Full Stack.jpg";
 import ifutureImg from "/src/assets/certifications/IFuture.jpg";
+import futureInternsImg from "/src/assets/certifications/futureInternsImg.png";
 
 const certificationsData = [
   {
-    title: "Mobile & Web Development App SDP",
-    issuer: "SIESGST",
+    title: "Full Stack Web Development Intern",
+    issuer: "Future Interns",
     type: "Internship",
-    year: "2024",
-    description: "Hands-on experience in building responsive applications and improving development skills.",
-    image: mobileWebDevImg,
-    link: mobileWebDevImg
+    year: "2025",
+    description: "Developed TripKart, a responsive travel booking web app using React and Firebase.",
+    image: futureInternsImg,
+    link: futureInternsImg
   },
 
   {
@@ -41,6 +42,16 @@ const certificationsData = [
     description: "Built a real-time E-Commerce platform during a 2-month in-house internship.",
     image: siesInternImg,
     link: siesInternImg
+  },
+
+  {
+    title: "Mobile & Web Development App SDP",
+    issuer: "SIESGST",
+    type: "Internship",
+    year: "2024",
+    description: "Hands-on experience in building responsive applications and improving development skills.",
+    image: mobileWebDevImg,
+    link: mobileWebDevImg
   },
 
   {

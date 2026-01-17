@@ -1,17 +1,18 @@
 import { useState } from "react";
-import image2 from "/src/assets/YuvaSaverainterface.png";
-import image3 from "/src/assets/UrbanShiftersinterface.png";
-import image4 from "/src/assets/Restaurantinterface.png";
-import image5 from "/src/assets/E-commerceinterface.png";
-import image6 from "/src/assets/Donationinterface.png";
-import image7 from "/src/assets/RockPaperScissorsGame.png";
-import image8 from "/src/assets/Weatherinterface.png";
-import image9 from "/src/assets/Pythoninterface.png";
+import image9 from "/src/assets/YuvaSaverainterface.png";
+import image8 from "/src/assets/TripKartinterface.png";
+import image7 from "/src/assets/Restaurantinterface.png";
+import image6 from "/src/assets/E-commerceinterface.png";
+import image5 from "/src/assets/UrbanShiftersinterface.png";
+import image4 from "/src/assets/Donationinterface.png";
+import image3 from "/src/assets/RockPaperScissorsGame.png";
+import image2 from "/src/assets/Weatherinterface.png";
+import image1 from "/src/assets/Pythoninterface.png";
 import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    image: image2,
+    image: image9,
     title: "Yuva Savera Website",
     description: "Yuva Savera is a simple and user-friendly web platform focused on youth empowerment, featuring clean sections for awareness content and community engagement, designed for easy access across all devices.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
@@ -19,7 +20,31 @@ const projectsData = [
   },
 
   {
-    image: image3,
+    image: image8,
+    title: "TripKart – Travel Booking Platform",
+    description: "A responsive and user-friendly travel booking website offering organized categories for flights, hotels, trains, buses, cabs, and holiday packages, with seamless navigation and real-time data integration for a smooth user experience.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Firebase", "Cloud Firestore", "React Router", "Vercel"],
+    demo: "https://tripkart-nine.vercel.app/",
+  },
+
+  {
+    image: image7,
+    title: "Restaurant Website",
+    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services with interactive sections.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    demo: "https://www.zaika.us.com/",
+  },
+
+  {
+    image: image6,
+    title: "E-commerce Website",
+    description: "A modern and stylish e-commerce platform designed specifically for women, offering a seamless shopping experience with secure checkout.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    demo: "https://herstyle-ecommerce.vercel.app/",
+  },
+
+  {
+    image: image5,
     title: "Packers & Movers Website",
     description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
@@ -28,22 +53,6 @@ const projectsData = [
 
   {
     image: image4,
-    title: "Restaurant Website",
-    description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services with interactive sections.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    demo: "https://www.zaika.us.com/",
-  },
-
-  {
-    image: image5,
-    title: "E-commerce Website",
-    description: "A modern and stylish e-commerce platform designed specifically for women, offering a seamless shopping experience with secure checkout.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    demo: "https://herstyle-ecommerce.vercel.app/",
-  },
-
-  {
-    image: image6,
     title: "Donation Website",
     description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure payment processing.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
@@ -51,7 +60,7 @@ const projectsData = [
   },
 
   {
-    image: image7,
+    image: image3,
     title: "Rock Paper Scissors Game",
     description: "A fun and interactive web-based Rock-Paper-Scissors game built using core web technologies.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -59,7 +68,7 @@ const projectsData = [
   },
 
   {
-    image: image8,
+    image: image2,
     title: "Weather App",
     description: "A responsive frontend web application that fetches and displays real-time weather updates using an API.",
     technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
@@ -67,7 +76,7 @@ const projectsData = [
   },
 
   {
-    image: image9,
+    image: image1,
     title: "Countdown Timer & Stopwatch",
     description: "A GUI-based desktop application allowing users to run a stopwatch or countdown timer with real-time updates.",
     technologies: ["Python (Tkinter)"],
