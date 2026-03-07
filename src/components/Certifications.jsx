@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import freeCodeCampImg from "/src/assets/certifications/freecodecamp_Responsive_Web_Design.png";
 import deloitteImg from "/src/assets/certifications/Data_Analytics_Forage.png";
 import apoorvCTFImg from "/src/assets/certifications/ApoorvCTF_Certificate.jpg";
 import codeCraftersImg from "/src/assets/certifications/Code Crafters 2.0 Hackathon.jpg";
@@ -12,8 +13,19 @@ import rajniTechImg from "/src/assets/certifications/Web_Developer_Intern.jpg";
 import siesInternImg from "/src/assets/certifications/Full Stack.jpg";
 import ifutureImg from "/src/assets/certifications/IFuture.jpg";
 import futureInternsImg from "/src/assets/certifications/futureInternsImg.png";
+import candorInternationalImg from "/src/assets/certifications/Candor_International_Internship.png";
 
 const certificationsData = [
+  {
+    title: "Web Development Intern",
+    issuer: "Candor International",
+    type: "Internship",
+    year: "2025 – 2026",
+    description: "Maintained and enhanced the live website vlady.in by implementing new features and technical site improvements.",
+    image: candorInternationalImg,
+    link: "https://vlady.in/"
+  },
+
   {
     title: "Full Stack Web Development Intern",
     issuer: "Future Interns",
@@ -73,6 +85,16 @@ const certificationsData = [
     image: ifutureImg,
     link: ifutureImg
   },  
+
+  {
+  title: "Responsive Web Design Developer",
+  issuer: "freeCodeCamp",
+  type: "Certification",
+  year: "2026",
+  description: "Completed 300 hours of coursework focused on HTML5, CSS3, Flexbox, and CSS Grid to build accessible and responsive web interfaces.",
+  image: freeCodeCampImg,
+  link: "https://freecodecamp.org/certification/shrutirawat215/responsive-web-design-v9"
+},
 
   {
     title: "Data Analytics Job Simulation",
