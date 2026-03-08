@@ -38,6 +38,7 @@ const Achievements = () => {
   const [index, setIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDragging, setIsDragging] = useState(false); // Added dragging state to pause autoscroll
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -63,13 +64,14 @@ const Achievements = () => {
   const prev = () => setIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
   useEffect(() => {
-    if (isMobile) {
+    // Only autoscroll if user is NOT currently swiping
+    if (isMobile && !isDragging) {
       const timer = setInterval(() => {
         setIndex((i) => (i >= achievementsData.length - 1 ? 0 : i + 1));
       }, 3000);
       return () => clearInterval(timer);
     }
-  }, [isMobile]);
+  }, [isMobile, isDragging]);
 
   useEffect(() => {
     if (!isMobile) {
@@ -102,19 +104,35 @@ const Achievements = () => {
       {isMobile ? (
         <div className="w-full max-w-[400px] overflow-hidden relative">
           <motion.div
+            // Switched to Pan gestures for reliable mobile swiping
+            onPanStart={() => setIsDragging(true)}
+            onPanEnd={(event, info) => {
+              setIsDragging(false);
+              // Swipe threshold of 40px
+              if (info.offset.x < -40) {
+                // Swiped Left
+                setIndex((i) => (i >= achievementsData.length - 1 ? 0 : i + 1));
+              } else if (info.offset.x > 40) {
+                // Swiped Right
+                setIndex((i) => (i <= 0 ? achievementsData.length - 1 : i - 1));
+              }
+            }}
             animate={{ x: -translateX }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex gap-6">
+            // Added touch-pan-y to allow vertical scroll while grabbing horizontal swipes
+            className="flex gap-6 touch-pan-y cursor-grab active:cursor-grabbing">
             {achievementsData.map((item, i) => (
               <div
                 key={i}
                 ref={i === 0 ? cardRef : null}
                 className="flex-shrink-0 w-full text-white">
                 <div className="h-full rounded-2xl border border-gray-700 bg-black/50 p-5 backdrop-blur-md">
-                  <a href={item.image} target="_blank" rel="noopener noreferrer">
+                  {/* Added draggable="false" to anchor so it doesn't interrupt the swipe */}
+                  <a href={item.image} target="_blank" rel="noopener noreferrer" draggable="false">
                     <img
                       src={item.image}
                       alt={item.title}
+                      draggable="false" // Prevents the browser from trying to "save/drag" the image
                       className="mb-4 w-full h-[180px] rounded-xl object-contain bg-black"/>
                   </a>
                   <span className="text-xs uppercase tracking-wide text-pink-400">{item.category}</span>
