@@ -23,7 +23,7 @@ const certificationsData = [
     year: "2025 – 2026",
     description: "Maintained and enhanced the live website vlady.in by implementing new features and technical site improvements.",
     image: candorInternationalImg,
-    link: "https://vlady.in/"
+    link: candorInternationalImg
   },
 
   {
