@@ -27,15 +27,12 @@ const Hero = () => {
             Shruti Rawat
           </h1>
 
-          <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-xl md:text-3xl">
-            Software Enthusiast
-          </h3>
+          {/* <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-xl md:text-3xl">
+            Building & Securing Technology
+          </h3> */}
 
           <p className="md:text-base text-pretty text-md text-gray-400">
-            I'm a passionate software enthusiast who loves turning ideas into real
-            digital experiences. With a curious mind and a constant desire to
-            learn, I enjoy building creative and meaningful projects that make a
-            difference.
+            Looking for an entry-level role in full-stack development, cybersecurity, or data analysis. I build web applications, turn data into dashboards that tell a story, and practice hands-on security exercises focused on monitoring, detecting, and defending systems.
           </p>
 
           <a

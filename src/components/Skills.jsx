@@ -15,6 +15,17 @@ const technicalSkills = [
   { icon: <SiMongodb />, color: "text-green-500", name: "MongoDB" },
 ];
 
+const securitySkills = [
+  "Networking & Linux Fundamentals",
+  "SOC / Blue Team Basics",
+  "Incident Response Basics",
+  "Wireshark",
+  "Burp Suite",
+  "Power BI",
+  "Excel",
+  "SQL",
+];
+
 const softSkills = [
   "Problem Solving",
   "Team Collaboration",
@@ -57,12 +68,12 @@ const Skills = () => {
         Skills
       </motion.h1>
 
-      <div className="grid w-full max-w-[1000px] grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid w-full max-w-[1000px] grid-cols-1 gap-8 md:grid-cols-3">
         {/* Technical Skills */}
         <ScrollReveal>
           <div className="rounded-2xl border border-indigo-600 focus:outline-none bg-black/50 p-4 backdrop-blur-md h-full">
             <h2 className="mb-6 text-center text-2xl font-medium text-gray-200">
-              Technical Skills
+              Development
             </h2>
 
             <div className="grid grid-cols-3 gap-4">
@@ -86,8 +97,29 @@ const Skills = () => {
           </div>
         </ScrollReveal>
 
-        {/* Soft Skills */}
+        {/* Security & Analysis Skills */}
         <ScrollReveal delay={0.2}>
+          <div className="rounded-2xl border border-indigo-600 focus:outline-none bg-black/50 p-4 backdrop-blur-md h-full">
+            <h2 className="mb-6 text-center text-2xl font-medium text-gray-200">
+              Security & Analysis
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {securitySkills.map((skill, index) => (
+                <motion.span
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-full border border-gray-600 bg-black/40 px-6 py-2 text-sm text-gray-200 cursor-pointer">
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Soft Skills */}
+        <ScrollReveal delay={0.4}>
           <div className="rounded-2xl border border-indigo-600 focus:outline-none bg-black/50 p-4 backdrop-blur-md h-full">
             <h2 className="mb-6 text-center text-2xl font-medium text-gray-200">
               Soft Skills

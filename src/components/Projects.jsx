@@ -1,6 +1,8 @@
 import { useState } from "react";
 import image9 from "/src/assets/YuvaSaverainterface.png";
 import image8 from "/src/assets/Tripkartinterface.png";
+import imageHR from "/src/assets/HRAttritioninterface.png";
+import imageNetwork from "/src/assets/NetworkThreatinterface.png";
 import image7 from "/src/assets/Restaurantinterface.png";
 import image6 from "/src/assets/E-commerceinterface.png";
 import image5 from "/src/assets/UrbanShiftersinterface.png";
@@ -12,27 +14,12 @@ import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    image: image9,
-    title: "Yuva Savera Website",
-    description: "Yuva Savera is a simple and user-friendly web platform focused on youth empowerment, featuring clean sections for awareness content and community engagement, designed for easy access across all devices.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
-    demo: "https://yuva-saveraaa.vercel.app/",
-  },
-
-  {
-    image: image8,
-    title: "TripKart – Travel Booking Platform",
-    description: "A responsive and user-friendly travel booking website offering organized categories for flights, hotels, trains, buses, cabs, and holiday packages, with seamless navigation and real-time data integration for a smooth user experience.",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Firebase", "Cloud Firestore", "React Router", "Vercel"],
-    demo: "https://tripkart-nine.vercel.app/",
-  },
-
-  {
     image: image7,
     title: "Restaurant Website",
     description: "A visually appealing and responsive restaurant website that showcases the brand’s menu, ambiance, and services with interactive sections.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     demo: "https://www.zaika.us.com/",
+    type: "demo",
   },
 
   {
@@ -41,6 +28,43 @@ const projectsData = [
     description: "A modern and stylish e-commerce platform designed specifically for women, offering a seamless shopping experience with secure checkout.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     demo: "https://herstyle-ecommerce.vercel.app/",
+    type: "demo",
+  },
+
+  {
+    image: imageHR,
+    title: "HR Attrition Analysis Dashboard",
+    description: "An interactive dashboard identifying key drivers of employee turnover, with dynamic slicers for department, salary slab, tenure, and age to help visualize where and why attrition happens.",
+    technologies: ["Power BI", "Power Query", "DAX"],
+    demo: "https://github.com/Shrutirawat27/HR-Attrition-Analysis-Dashboard",
+    type: "github",
+  },
+
+  {
+    image: imageNetwork,
+    title: "Network Threat Intelligence Dashboard",
+    description: "A SOC-focused dashboard visualizing real-time network traffic, attack vectors, and top-targeted services to support proactive threat response and monitoring.",
+    technologies: ["Power BI", "Network Traffic Analysis"],
+    demo: "https://github.com/Shrutirawat27/Network-Threat-Intelligence-Dashboard",
+    type: "github",
+  },
+
+  {
+    image: image9,
+    title: "Yuva Savera Website",
+    description: "Yuva Savera is a simple and user-friendly web platform focused on youth empowerment, featuring clean sections for awareness content and community engagement, designed for easy access across all devices.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
+    demo: "https://yuva-saveraaa.vercel.app/",
+    type: "demo",
+  },
+
+  {
+    image: image8,
+    title: "TripKart – Travel Booking Platform",
+    description: "A responsive and user-friendly travel booking website offering organized categories for flights, hotels, trains, buses, cabs, and holiday packages, with seamless navigation and real-time data integration for a smooth user experience.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Firebase", "Cloud Firestore", "React Router"],
+    demo: "https://tripkart-nine.vercel.app/",
+    type: "demo",
   },
 
   {
@@ -49,6 +73,7 @@ const projectsData = [
     description: "UrbanShifters is a responsive Packers & Movers website that offers a clean homepage, service categories like home shifting, office relocation, and vehicle transport, along with an easy inquiry system.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     demo: "https://urban-shifters.vercel.app/",
+    type: "demo",
   },
 
   {
@@ -57,6 +82,7 @@ const projectsData = [
     description: "A full-stack donation platform built using the MERN stack, integrated with Stripe for secure payment processing.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwindcss", "Cloudinary"],
     demo: "https://donatezone.vercel.app/",
+    type: "demo",
   },
 
   {
@@ -65,6 +91,7 @@ const projectsData = [
     description: "A fun and interactive web-based Rock-Paper-Scissors game built using core web technologies.",
     technologies: ["HTML", "CSS", "JavaScript"],
     demo: "https://rock-paper-scissors-beta-ruby.vercel.app/",
+    type: "demo",
   },
 
   {
@@ -73,6 +100,7 @@ const projectsData = [
     description: "A responsive frontend web application that fetches and displays real-time weather updates using an API.",
     technologies: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
     demo: "https://weather-app-nu-blue-21.vercel.app/",
+    type: "demo",
   },
 
   {
@@ -81,6 +109,7 @@ const projectsData = [
     description: "A GUI-based desktop application allowing users to run a stopwatch or countdown timer with real-time updates.",
     technologies: ["Python (Tkinter)"],
     demo: "",
+    type: "demo",
   },
 ];
 
@@ -131,7 +160,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg bg-blue-600 px-4 py-2 text-sm transition-colors hover:bg-blue-500">
-                Live Demo
+                {project.type === "github" ? "View on GitHub" : "Live Demo"}
               </a>
             </div>
           )}
