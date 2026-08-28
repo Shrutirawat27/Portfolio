@@ -14,6 +14,12 @@ import siesInternImg from "/src/assets/certifications/Full Stack.jpg";
 import ifutureImg from "/src/assets/certifications/IFuture.jpg";
 import futureInternsImg from "/src/assets/certifications/futureInternsImg.png";
 import candorInternationalImg from "/src/assets/certifications/Candor_International_Internship.png";
+import kpmgAuditAssuranceImg from "/src/assets/certifications/KPMG_Audit_Assurance_Forage.png";
+import mastercardCyberImg from "/src/assets/certifications/Mastercard_Cybersecurity_Forage.png";
+import kpmgAuditImg from "/src/assets/certifications/KPMG_Audit_Forage.png";
+import goldmanSachsAuditImg from "/src/assets/certifications/Goldman_Sachs_Internal_Audit_Forage.png";
+import mastercardAdvisorsImg from "/src/assets/certifications/Mastercard_Advisors_Consulting_Forage.png";
+import deloitteCyberImg from "/src/assets/certifications/Deloitte_Cyber_Forage.png";
 
 const certificationsData = [
   {
@@ -27,16 +33,6 @@ const certificationsData = [
   },
 
   {
-    title: "Full Stack Web Development Intern",
-    issuer: "Future Interns",
-    type: "Internship",
-    year: "2025",
-    description: "Developed TripKart, a responsive travel booking web app using React and Firebase.",
-    image: futureInternsImg,
-    link: futureInternsImg
-  },
-
-  {
     title: "Web Developer Intern",
     issuer: "Rajni Tech Foundation",
     type: "Internship",
@@ -47,6 +43,86 @@ const certificationsData = [
   },
 
   {
+    title: "Experience a Day with KPMG Audit & Assurance",
+    issuer: "KPMG",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed practical tasks covering audit fundamentals, trial balance and Excel skills, revenue risk analysis, and data-driven storytelling.",
+    image: kpmgAuditAssuranceImg,
+    link: kpmgAuditAssuranceImg
+  },
+
+  {
+    title: "Cybersecurity Job Simulation",
+    issuer: "Mastercard",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed practical tasks in designing a phishing email simulation and interpreting phishing simulation results.",
+    image: mastercardCyberImg,
+    link: mastercardCyberImg
+  },
+
+  {
+    title: "Internal Audit Job Simulation",
+    issuer: "Goldman Sachs",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed practical tasks covering the foundations of internal audit and risk assessment in global banking and markets.",
+    image: goldmanSachsAuditImg,
+    link: goldmanSachsAuditImg
+  },
+
+  {
+    title: "Audit Job Simulation",
+    issuer: "KPMG",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed practical tasks in audit risk assessment planning and revenue testing analytics.",
+    image: kpmgAuditImg,
+    link: kpmgAuditImg
+  },
+
+  {
+    title: "Advisors & Consulting Services Job Simulation",
+    issuer: "Mastercard",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed practical tasks in promotion optimization and data-driven storytelling for business consulting.",
+    image: mastercardAdvisorsImg,
+    link: mastercardAdvisorsImg
+  },
+
+  {
+    title: "Cyber Job Simulation",
+    issuer: "Deloitte",
+    type: "Job Simulation",
+    year: "2026",
+    description: "Completed hands-on practical tasks in cybersecurity as part of Deloitte's job simulation program.",
+    image: deloitteCyberImg,
+    link: deloitteCyberImg
+  },
+
+  {
+    title: "Responsive Web Design Developer",
+    issuer: "freeCodeCamp",
+    type: "Certification",
+    year: "2026",
+    description: "Completed 300 hours of coursework focused on HTML5, CSS3, Flexbox, and CSS Grid to build accessible and responsive web interfaces.",
+    image: freeCodeCampImg,
+    link: "https://freecodecamp.org/certification/shrutirawat215/responsive-web-design-v9"
+  },
+
+  {
+    title: "Full Stack Web Development Intern",
+    issuer: "Future Interns",
+    type: "Internship",
+    year: "2025",
+    description: "Developed TripKart, a responsive travel booking web app using React and Firebase.",
+    image: futureInternsImg,
+    link: futureInternsImg
+  },
+
+  {
     title: "Full-Stack Web & Mobile App Development Intern",
     issuer: "SIESGST",
     type: "Internship",
@@ -54,6 +130,46 @@ const certificationsData = [
     description: "Built a real-time E-Commerce platform during a 2-month in-house internship.",
     image: siesInternImg,
     link: siesInternImg
+  },
+
+  {
+    title: "Cloud Intern",
+    issuer: "iFuture Technologies Pvt. Ltd",
+    type: "Internship",
+    year: "2025",
+    description: "Gained hands-on experience in Microsoft Server Management and private cloud deployment.",
+    image: ifutureImg,
+    link: ifutureImg
+  },  
+
+  {
+    title: "Data Analytics Job Simulation",
+    issuer: "Deloitte Australia",
+    type: "Course",
+    year: "2025",
+    description: "Hands-on experience solving real business problems using Tableau and Excel.",
+    image: deloitteImg,
+    link: deloitteImg
+  },
+
+  {
+    title: "Apoorv 2025 Capture The Flag (CTF)",
+    issuer: "IIIT Kottayam Cyber Security Club",
+    type: "Competition",
+    year: "2025",
+    description: "Participated in a challenging cybersecurity competition to sharpen problem-solving skills.",
+    image: apoorvCTFImg,
+    link: apoorvCTFImg
+  },
+
+  {
+    title: "Code Crafters 2.0 Hackathon",
+    issuer: "Coding Club, SCOE",
+    type: "Competition",
+    year: "2025",
+    description: "Collaborated and built innovative solutions in a competitive coding environment.",
+    image: codeCraftersImg,
+    link: codeCraftersImg
   },
 
   {
@@ -74,36 +190,6 @@ const certificationsData = [
     description: "Practical exposure to hacking techniques, tools, and threat analysis.",
     image: ethicalHackingImg,
     link: ethicalHackingImg
-  },
-
-  {
-    title: "Cloud Intern",
-    issuer: "iFuture Technologies Pvt. Ltd",
-    type: "Internship",
-    year: "2025",
-    description: "Gained hands-on experience in Microsoft Server Management and private cloud deployment.",
-    image: ifutureImg,
-    link: ifutureImg
-  },  
-
-  {
-  title: "Responsive Web Design Developer",
-  issuer: "freeCodeCamp",
-  type: "Certification",
-  year: "2026",
-  description: "Completed 300 hours of coursework focused on HTML5, CSS3, Flexbox, and CSS Grid to build accessible and responsive web interfaces.",
-  image: freeCodeCampImg,
-  link: "https://freecodecamp.org/certification/shrutirawat215/responsive-web-design-v9"
-},
-
-  {
-    title: "Data Analytics Job Simulation",
-    issuer: "Deloitte Australia",
-    type: "Course",
-    year: "2025",
-    description: "Hands-on experience solving real business problems using Tableau and Excel.",
-    image: deloitteImg,
-    link: deloitteImg
   },
 
   {
@@ -135,27 +221,6 @@ const certificationsData = [
     image: googleCyberImg,
     link: googleCyberImg
   },
-
-  {
-    title: "Apoorv 2025 Capture The Flag (CTF)",
-    issuer: "IIIT Kottayam Cyber Security Club",
-    type: "Competition",
-    year: "2025",
-    description: "Participated in a challenging cybersecurity competition to sharpen problem-solving skills.",
-    image: apoorvCTFImg,
-    link: apoorvCTFImg
-  },
-
-  {
-    title: "Code Crafters 2.0 Hackathon",
-    issuer: "Coding Club, SCOE",
-    type: "Competition",
-    year: "2025",
-    description: "Collaborated and built innovative solutions in a competitive coding environment.",
-    image: codeCraftersImg,
-    link: codeCraftersImg
-  },
-  
 ];
 
 const variants = {
