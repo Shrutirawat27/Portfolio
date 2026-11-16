@@ -20,6 +20,7 @@ import kpmgAuditImg from "/src/assets/certifications/KPMG_Audit_Forage.png";
 import goldmanSachsAuditImg from "/src/assets/certifications/Goldman_Sachs_Internal_Audit_Forage.png";
 import mastercardAdvisorsImg from "/src/assets/certifications/Mastercard_Advisors_Consulting_Forage.png";
 import deloitteCyberImg from "/src/assets/certifications/Deloitte_Cyber_Forage.png";
+import hackerverseImg from "/src/assets/certifications/Hackerverse_CTF.png";
 
 const certificationsData = [
   {
@@ -50,6 +51,16 @@ const certificationsData = [
     description: "Completed practical tasks covering audit fundamentals, trial balance and Excel skills, revenue risk analysis, and data-driven storytelling.",
     image: kpmgAuditAssuranceImg,
     link: kpmgAuditAssuranceImg
+  },
+
+  {
+    title: "Hackerverse CTF – Digital Forensics & Incident Response",
+    issuer: "EC-Council",
+    type: "Competition",
+    year: "2026",
+    description: "Participated in a hands-on CTF competition solving digital forensics and incident response (DFIR) challenges.",
+    image: hackerverseImg,
+    link: hackerverseImg
   },
 
   {
